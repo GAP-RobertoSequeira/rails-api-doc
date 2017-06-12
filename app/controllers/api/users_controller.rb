@@ -3,6 +3,7 @@ class Api::UsersController < ApplicationController
 
   before_action :find_user, only: [:show, :update, :destroy]
 
+
   swagger_path '/users' do
     operation :get do
       key :description, 'Returns all users from the system'
@@ -64,7 +65,7 @@ class Api::UsersController < ApplicationController
     end
   end
 
-  swagger_path '/user/{id}' do
+  swagger_path '/users/{id}' do
     operation :get do
       key :description, 'Returns a single user'
       key :operationId, 'findUserById'
@@ -99,7 +100,8 @@ class Api::UsersController < ApplicationController
   end
 
   def create
-    User.create(user_params)
+    user = User.create(user_params)
+    render json: user
   end
 
   def show

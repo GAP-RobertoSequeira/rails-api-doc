@@ -16,7 +16,7 @@
           key :url, 'https://swagger.io'
         end
       end
-      key :host, 'https://rails-api-docs.herokuapp.com/'
+      # key :host, 'rails-api-docs.herokuapp.com'
       key :basePath, '/api'
       key :consumes, ['application/json']
       key :produces, ['application/json']
@@ -26,6 +26,7 @@
     SWAGGERED_CLASSES = [
       UsersController,
       User,
+      ::ErrorModel,
       self,
     ].freeze
 
