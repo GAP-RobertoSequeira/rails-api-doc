@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.create(
+  50.times.map do |i|
+    { username: "user#{i}", first_name: Faker::Name.first_name, last_name: Faker::Name.first_name }
+  end
+)
